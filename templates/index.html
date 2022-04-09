@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>CheckerBoard: 8x8 layout</title>
+</head>
+<body>
+    <h1>Checkerboard</h1> <!--start here first with the html and the css before moving on to the back end server side-->
+    <h3>8x8 Layout</h3>
+    <table>
+        {% for i in range(8): %} <!--place the forloop because the first two row set are the ones repeating. This just makes code "dryer" -->
+        <tr>
+            {% for j in range(8): %}
+            <td class='color{{ (i+j)%2+1 }}'></td>
+            {% endfor %}
+        </tr>
+        {% endfor %} 
+    </table>
+</body>
+</html>
